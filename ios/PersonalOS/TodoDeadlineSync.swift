@@ -30,14 +30,29 @@ import EventKit
         UserDefaults.standard.set(try JSONEncoder().encode(receipts), forKey: storageKey)
     }
     private func fingerprint(_ e: EKEvent) -> String {
-        let fields = [e.title ?? "", String(e.startDate.timeIntervalSince1970), String(e.endDate.timeIntervalSince1970),
-                      String(e.isAllDay), e.timeZone?.identifier ?? "", e.calendar.calendarIdentifier,
-                      e.notes ?? "", e.url?.absoluteString ?? "", e.location ?? "", String(e.availability.rawValue),
-                      String(e.hasAttendees), String(e.attendees?.count ?? 0),
-                      String(e.recurrenceRules?.count ?? 0), e.structuredLocation?.title ?? "",
-                      String(e.structuredLocation?.geoLocation?.coordinate.latitude ?? 0),
-                      String(e.structuredLocation?.geoLocation?.coordinate.longitude ?? 0),
-                      (e.alarms ?? []).map { String($0.relativeOffset) + ":" + String($0.absoluteDate?.timeIntervalSince1970 ?? 0) }.joined(separator: ",")]
+        var fields: [String] = []
+        fields.append(e.title ?? "")
+        fields.append(String(e.startDate.timeIntervalSince1970))
+        fields.append(String(e.endDate.timeIntervalSince1970))
+        fields.append(String(e.isAllDay))
+        fields.append(e.timeZone?.identifier ?? "")
+        fields.append(e.calendar.calendarIdentifier)
+        fields.append(e.notes ?? "")
+        fields.append(e.url?.absoluteString ?? "")
+        fields.append(e.location ?? "")
+        fields.append(String(e.availability.rawValue))
+        fields.append(String(e.hasAttendees))
+        fields.append(String(e.attendees?.count ?? 0))
+        fields.append(String(e.recurrenceRules?.count ?? 0))
+        fields.append(e.structuredLocation?.title ?? "")
+        fields.append(String(e.structuredLocation?.geoLocation?.coordinate.latitude ?? 0))
+        fields.append(String(e.structuredLocation?.geoLocation?.coordinate.longitude ?? 0))
+        let alarms: [String] = (e.alarms ?? []).map { alarm in
+            let offset = String(alarm.relativeOffset)
+            let absolute = String(alarm.absoluteDate?.timeIntervalSince1970 ?? 0)
+            return offset + ":" + absolute
+        }
+        fields.append(alarms.joined(separator: ","))
         return JournalMetadata.hash(fields.joined(separator: "\u{1f}"))
     }
     private func find(url: URL, calendar: EKCalendar, start: Date, end: Date, receipt: Receipt?) throws -> EKEvent? {
