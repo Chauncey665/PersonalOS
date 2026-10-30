@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>PersonalOS</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.13</string>
+	<key>CFBundleVersion</key>
+	<string>26</string>
+	<key>PersonalOSHealthKitEnabled</key>
+	<false/>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>由你分别开启：读取今天日程供私人 Mac 规划，或在本功能创建的独立 PersonalOS 日历中记录已完成事项与未来安排。完整访问用于重复检测和安全撤销，不修改其他日历。</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>读取你允许的运动、睡眠、身体和营养摘要，仅共享给配对的私人 Mac，用于训练与恢复建议。</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>通过你的私人网络连接 Mac，提交任务并读取结果。</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>用于查询所在地区天气，以及搜索附近餐厅和导航地点。地图定位由手机与Apple地图处理；天气只向私人Mac和Open-Meteo发送大致地区坐标。</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>在你点击录音时听取任务。</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>将你主动录制的语音转为任务文字。</string>
+	<key>PersonalOSAPNSEnvironment</key>
+	<string>sandbox</string>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+	</dict>
+	<key>UILaunchScreen</key>
+	<dict/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+</dict>
+</plist>

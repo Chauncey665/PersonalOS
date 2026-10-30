@@ -1,0 +1,83 @@
+{
+  "edition": "public alpha source candidate",
+  "backend_tests": {
+    "total": 525,
+    "passed": 524,
+    "skipped": 1,
+    "skip_reason": "Real Ollama historical integration case is opt-in"
+  },
+  "remote_exporter_tests": {
+    "total": 12,
+    "passed": 12
+  },
+  "unsigned_simulator_build": {
+    "passed": true,
+    "xcode": "27.1",
+    "signing": "disabled",
+    "physical_iphone_installation": false
+  },
+  "clean_copy_smoke": {
+    "passed": true,
+    "fresh_copy_with_spaces": true,
+    "base_install_no_downloads": true,
+    "login_service_manifest_only": true,
+    "real_authenticated_loopback_http": true,
+    "two_device_isolation": true,
+    "request_retry_idempotent": true,
+    "real_file_move_and_undo": true,
+    "calendar_ack_protocol_synthetic": true,
+    "physical_iphone_test": false,
+    "model_inference_test": false
+  },
+  "clean_copy_local_model_smoke": {
+    "passed": true,
+    "fresh_copy_with_spaces": true,
+    "base_install_no_downloads": true,
+    "login_service_manifest_only": true,
+    "real_authenticated_loopback_http": true,
+    "two_device_isolation": true,
+    "request_retry_idempotent": true,
+    "real_file_move_and_undo": true,
+    "calendar_ack_protocol_synthetic": true,
+    "physical_iphone_test": false,
+    "model_inference_test": true,
+    "existing_local_model_tag": "qwen3.5:9b-q4_K_M",
+    "model_downloads_started": false
+  },
+  "shortcuts": {
+    "unsigned_xml_sources": 3,
+    "generated_with_synthetic_bundle_and_team": true,
+    "signed_with_original_owner_identity": false,
+    "new_bundle_physical_acceptance": false
+  },
+  "privacy": {
+    "historical_runtime_reports_screenshots_and_audio_excluded": true,
+    "personal_hosts_accounts_signing_team_and_project_removed": true,
+    "icon_metadata_removed_pixel_streams_preserved": true,
+    "private_service_runtime_hashes_unchanged": true,
+    "independent_security_audit": false,
+    "known_deployment_identifier_scan_passed": true,
+    "public_source_scan_passed": true
+  },
+  "default_model": "qwen3.5:9b",
+  "default_model_fresh_download_repeated": false,
+  "optional_asr_fresh_download_repeated": false,
+  "new_user_healthkit_apns_canvas_and_live_remote_signin_verified": false,
+  "git_repository_initialized": true,
+  "initial_commit_created": true,
+  "portable_native_helper_build": {
+    "passed": true,
+    "temporary_state_only": true,
+    "login_service_not_installed_during_verification": true
+  },
+  "publication": {
+    "repository_url": "https://github.com/Chauncey665/PersonalOS",
+    "remote_ci": "See the live Actions tab; local results below are not a claim of remote CI success."
+  },
+  "assistant_name": {
+    "default": "PersonalOS",
+    "user_configurable": true,
+    "cli": "python scripts/personalos.py name Atlas",
+    "isolated_identity_tests_passed": 4
+  }
+}

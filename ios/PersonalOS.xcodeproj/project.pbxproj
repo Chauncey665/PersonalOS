@@ -1,0 +1,260 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A0000000000000000000000B /* PersonalOS/PersonalOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000005 /* PersonalOS/PersonalOSApp.swift */; };
+		B00000000000000000000011 /* PersonalOS/CompanionFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000001 /* PersonalOS/CompanionFeatures.swift */; };
+		B00000000000000000000012 /* PersonalOS/IntentEntryPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000002 /* PersonalOS/IntentEntryPoints.swift */; };
+		B00000000000000000000013 /* PersonalOS/FileBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000003 /* PersonalOS/FileBrowser.swift */; };
+		B00000000000000000000014 /* PersonalOS/Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000004 /* PersonalOS/Assets.xcassets */; };
+		B00000000000000000000015 /* PersonalOS/CalendarJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000005 /* PersonalOS/CalendarJournal.swift */; };
+		B00000000000000000000016 /* PersonalOS/DailyAgenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000006 /* PersonalOS/DailyAgenda.swift */; };
+		B00000000000000000000017 /* PersonalOS/DailyAgendaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000007 /* PersonalOS/DailyAgendaView.swift */; };
+		B00000000000000000000018 /* PersonalOS/TodoBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000008 /* PersonalOS/TodoBoard.swift */; };
+		B00000000000000000000019 /* PersonalOS/TodoDeadlineSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000009 /* PersonalOS/TodoDeadlineSync.swift */; };
+		B0000000000000000000001A /* PersonalOS/AutoSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000000000000000000000A /* PersonalOS/AutoSchedule.swift */; };
+		B0000000000000000000001B /* PersonalOS/WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000000000000000000000B /* PersonalOS/WeatherLocation.swift */; };
+		B0000000000000000000001C /* PersonalOS/DocumentsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000000000000000000000C /* PersonalOS/DocumentsUI.swift */; };
+		B0000000000000000000001D /* PersonalOS/PhoneActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000000000000000000000D /* PersonalOS/PhoneActions.swift */; };
+		B0000000000000000000001E /* PersonalOS/MacOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000000000000000000000E /* PersonalOS/MacOperations.swift */; };
+		B0000000000000000000001F /* PersonalOS/VoiceConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000000000000000000000F /* PersonalOS/VoiceConversation.swift */; };
+		B00000000000000000000020 /* PersonalOS/VoiceInvocationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000010 /* PersonalOS/VoiceInvocationContext.swift */; };
+		B00000000000000000000021 /* PersonalOS/PersonalOSNavigationURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000001 /* PersonalOS/PersonalOSNavigationURL.swift */; };
+		D00000000000000000000002 /* PersonalOS/HealthFitness.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00000000000000000000001 /* PersonalOS/HealthFitness.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A00000000000000000000005 /* PersonalOS/PersonalOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOS/PersonalOSApp.swift; sourceTree = "<group>"; };
+		A00000000000000000000006 /* PersonalOS/Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PersonalOS/Info.plist; sourceTree = "<group>"; };
+		A00000000000000000000007 /* PersonalOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00000000000000000000001 /* PersonalOS/CompanionFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOS/CompanionFeatures.swift; sourceTree = "<group>"; };
+		B00000000000000000000002 /* PersonalOS/IntentEntryPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOS/IntentEntryPoints.swift; sourceTree = "<group>"; };
+		B00000000000000000000003 /* PersonalOS/FileBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOS/FileBrowser.swift; sourceTree = "<group>"; };
+		B00000000000000000000004 /* PersonalOS/Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PersonalOS/Assets.xcassets; sourceTree = "<group>"; };
+		B00000000000000000000005 /* PersonalOS/CalendarJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOS/CalendarJournal.swift; sourceTree = "<group>"; };
+		B00000000000000000000006 /* PersonalOS/DailyAgenda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOS/DailyAgenda.swift; sourceTree = "<group>"; };
+		B00000000000000000000007 /* PersonalOS/DailyAgendaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOS/DailyAgendaView.swift; sourceTree = "<group>"; };
+		B00000000000000000000008 /* PersonalOS/TodoBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOS/TodoBoard.swift; sourceTree = "<group>"; };
+		B00000000000000000000009 /* PersonalOS/TodoDeadlineSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOS/TodoDeadlineSync.swift; sourceTree = "<group>"; };
+		B0000000000000000000000A /* PersonalOS/AutoSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOS/AutoSchedule.swift; sourceTree = "<group>"; };
+		B0000000000000000000000B /* PersonalOS/WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOS/WeatherLocation.swift; sourceTree = "<group>"; };
+		B0000000000000000000000C /* PersonalOS/DocumentsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOS/DocumentsUI.swift; sourceTree = "<group>"; };
+		B0000000000000000000000D /* PersonalOS/PhoneActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOS/PhoneActions.swift; sourceTree = "<group>"; };
+		B0000000000000000000000E /* PersonalOS/MacOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOS/MacOperations.swift; sourceTree = "<group>"; };
+		B0000000000000000000000F /* PersonalOS/VoiceConversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOS/VoiceConversation.swift; sourceTree = "<group>"; };
+		B00000000000000000000010 /* PersonalOS/VoiceInvocationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOS/VoiceInvocationContext.swift; sourceTree = "<group>"; };
+		C00000000000000000000001 /* PersonalOS/PersonalOSNavigationURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOS/PersonalOSNavigationURL.swift; sourceTree = "<group>"; };
+		D00000000000000000000001 /* PersonalOS/HealthFitness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOS/HealthFitness.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A00000000000000000000009 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A00000000000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000005 /* PersonalOS/PersonalOSApp.swift */,
+				B00000000000000000000001 /* PersonalOS/CompanionFeatures.swift */,
+				B00000000000000000000002 /* PersonalOS/IntentEntryPoints.swift */,
+				B00000000000000000000003 /* PersonalOS/FileBrowser.swift */,
+				B00000000000000000000004 /* PersonalOS/Assets.xcassets */,
+				B00000000000000000000005 /* PersonalOS/CalendarJournal.swift */,
+				B00000000000000000000009 /* PersonalOS/TodoDeadlineSync.swift */,
+				B00000000000000000000008 /* PersonalOS/TodoBoard.swift */,
+				B00000000000000000000007 /* PersonalOS/DailyAgendaView.swift */,
+				B00000000000000000000006 /* PersonalOS/DailyAgenda.swift */,
+				B0000000000000000000000A /* PersonalOS/AutoSchedule.swift */,
+				B0000000000000000000000B /* PersonalOS/WeatherLocation.swift */,
+				D00000000000000000000001 /* PersonalOS/HealthFitness.swift */,
+				B0000000000000000000000C /* PersonalOS/DocumentsUI.swift */,
+				B0000000000000000000000E /* PersonalOS/MacOperations.swift */,
+				B0000000000000000000000F /* PersonalOS/VoiceConversation.swift */,
+				B00000000000000000000010 /* PersonalOS/VoiceInvocationContext.swift */,
+				C00000000000000000000001 /* PersonalOS/PersonalOSNavigationURL.swift */,
+				B0000000000000000000000D /* PersonalOS/PhoneActions.swift */,
+				A00000000000000000000006 /* PersonalOS/Info.plist */,
+				A00000000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A00000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000007 /* PersonalOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A00000000000000000000004 /* PersonalOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00000000000000000000011 /* Build configuration list for PBXNativeTarget "PersonalOS" */;
+			buildPhases = (
+				A00000000000000000000008 /* Sources */,
+				A00000000000000000000009 /* Frameworks */,
+				A0000000000000000000000A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PersonalOS;
+			productName = PersonalOS;
+			productReference = A00000000000000000000007 /* PersonalOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A00000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = A00000000000000000000010 /* Build configuration list for PBXProject "PersonalOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = "zh-Hans";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				"zh-Hans",
+				Base,
+			);
+			mainGroup = A00000000000000000000002;
+			productRefGroup = A00000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A00000000000000000000004 /* PersonalOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A0000000000000000000000A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00000000000000000000014 /* PersonalOS/Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A00000000000000000000008 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0000000000000000000000B /* PersonalOS/PersonalOSApp.swift in Sources */,
+				B00000000000000000000012 /* PersonalOS/IntentEntryPoints.swift in Sources */,
+				B00000000000000000000011 /* PersonalOS/CompanionFeatures.swift in Sources */,
+				B00000000000000000000013 /* PersonalOS/FileBrowser.swift in Sources */,
+				B00000000000000000000015 /* PersonalOS/CalendarJournal.swift in Sources */,
+				B00000000000000000000019 /* PersonalOS/TodoDeadlineSync.swift in Sources */,
+				B0000000000000000000001C /* PersonalOS/DocumentsUI.swift in Sources */,
+				B0000000000000000000001E /* PersonalOS/MacOperations.swift in Sources */,
+				B0000000000000000000001F /* PersonalOS/VoiceConversation.swift in Sources */,
+				B00000000000000000000020 /* PersonalOS/VoiceInvocationContext.swift in Sources */,
+				B00000000000000000000021 /* PersonalOS/PersonalOSNavigationURL.swift in Sources */,
+				B0000000000000000000001D /* PersonalOS/PhoneActions.swift in Sources */,
+				B0000000000000000000001B /* PersonalOS/WeatherLocation.swift in Sources */,
+				D00000000000000000000002 /* PersonalOS/HealthFitness.swift in Sources */,
+				B0000000000000000000001A /* PersonalOS/AutoSchedule.swift in Sources */,
+				B00000000000000000000018 /* PersonalOS/TodoBoard.swift in Sources */,
+				B00000000000000000000017 /* PersonalOS/DailyAgendaView.swift in Sources */,
+				B00000000000000000000016 /* PersonalOS/DailyAgenda.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A00000000000000000000012 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A00000000000000000000013 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A00000000000000000000014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PersonalOS/PersonalOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = PersonalOS/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = org.personalosassistant.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A00000000000000000000015 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PersonalOS/PersonalOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = PersonalOS/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = org.personalosassistant.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A00000000000000000000010 /* Build configuration list for PBXProject "PersonalOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000000000000000000012 /* Debug */,
+				A00000000000000000000013 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00000000000000000000011 /* Build configuration list for PBXNativeTarget "PersonalOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000000000000000000014 /* Debug */,
+				A00000000000000000000015 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A00000000000000000000001 /* Project object */;
+}

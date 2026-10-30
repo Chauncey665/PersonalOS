@@ -95,7 +95,7 @@ python -m unittest discover -s air
 python scripts/smoke_install.py
 ```
 
-The default suite uses isolated state and does not require downloading a model. The historical real-Ollama integration scenario is opt-in via `ELLIS_LIVE_TESTS=1`. The clean install smoke starts a separate loopback server, pairs two synthetic devices, verifies owner isolation, executes a real device-status request, and cleans up.
+The default suite uses isolated state and does not require downloading a model. The historical real-Ollama integration scenario is opt-in via `PERSONALOS_LIVE_TESTS=1`. The clean install smoke starts a separate loopback server, pairs two synthetic devices, verifies owner isolation, executes a real device-status request, and cleans up.
 
 For iOS:
 
