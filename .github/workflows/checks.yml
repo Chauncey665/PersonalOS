@@ -16,6 +16,9 @@ jobs:
       - run: python scripts/smoke_install.py
   ios-build:
     runs-on: macos-15
+    env:
+      # macos-15 still defaults to Xcode 16; App Intents require the iOS 26 SDK.
+      DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
     steps:
       - uses: actions/checkout@v4
       - run: xcodebuild -project ios/PersonalOS.xcodeproj -scheme PersonalOS -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' -derivedDataPath build CODE_SIGNING_ALLOWED=NO build
