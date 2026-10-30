@@ -284,7 +284,13 @@ enum DailyAgendaMetadata {
                       String(event.isAllDay), event.timeZone?.identifier ?? "", event.notes ?? "", event.location ?? "", event.url?.absoluteString ?? "",
                       String(event.availability.rawValue), String(event.hasAttendees), String(event.status.rawValue)]
         if excludeCalendar { fields.removeFirst() }
-        fields += (event.alarms ?? []).map { String($0.relativeOffset) + ":" + String($0.absoluteDate?.timeIntervalSince1970 ?? 0) + ":" + ($0.structuredLocation?.title ?? "") + ":" + String($0.proximity.rawValue) }
+        for alarm in event.alarms ?? [] {
+            let offset = String(alarm.relativeOffset)
+            let absolute = String(alarm.absoluteDate?.timeIntervalSince1970 ?? 0)
+            let location = alarm.structuredLocation?.title ?? ""
+            let proximity = String(alarm.proximity.rawValue)
+            fields.append([offset, absolute, location, proximity].joined(separator: ":"))
+        }
         if !preserveOnly {
             fields += [event.title ?? "", String(event.lastModifiedDate?.timeIntervalSince1970 ?? 0), String(event.isDetached)]
             for rule in event.recurrenceRules ?? [] {
