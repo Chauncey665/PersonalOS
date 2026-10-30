@@ -1,37 +1,71 @@
+<div align="center">
+
 # PersonalOS
+### 把一句话，变成待办、日程和真正的操作。
 
-**把你说的话，变成能执行的日程。**
+**面向 iPhone 和 Mac 的本地 AI 私人助手，使用 Ollama 运行本地模型。**
+记住要做的事，按空档排进 Apple 日历，让 Mac 处理授权范围内的文件。
 
-面向 iPhone 和个人 Mac 的本地优先 AI 助手。
+[![Checks](https://github.com/Chauncey665/PersonalOS/actions/workflows/checks.yml/badge.svg)](https://github.com/Chauncey665/PersonalOS/actions/workflows/checks.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-187685)](LICENSE)
+[![SwiftUI](https://img.shields.io/badge/iOS-SwiftUI-283541)](ios)
+[![Local AI](https://img.shields.io/badge/local_AI-Ollama-283541)](https://ollama.com)
 
-[English](README.md) · [安装教程](docs/INSTALL.zh-CN.md) · [语音入口](docs/VOICE.md) · [安全边界](SECURITY.md)
+[English](README.md) · [看演示](#先看它怎么用) · [开始安装](#先在-mac-跑起来) · [iPhone 设置](docs/INSTALL.zh-CN.md)
 
-> 公开 Alpha：这是从真实自用项目整理的开源版本。界面目前以简体中文为主；支持中英文输入和语音，但并不保证每一种自然表达、日期或系统操作都识别正确，也不是 App Store 成品。
+![PersonalOS 原生界面：今日圆环、项目与截止日期、语音和文字输入](docs/media/overview.png)
 
-“周五前交报告。” → 记下截止日期 → 避开课程安排执行时间 → 同步 Apple 日历 → 没做完的自动顺延 → 简短报告真实调整。
+</div>
 
-## 助手叫什么，由你决定
+> **公开 Alpha，自行部署。** 当前原生 SwiftUI 界面以简体中文为主，支持中英文输入和语音，英文排程表达的测试覆盖较少。需要自己的 Mac、Apple 签名和私有网络；没有共享服务器，也没有人人通用的 iPhone 安装包。
 
-**PersonalOS 是项目名，助手的名字可以由每位用户自己修改。** 例如叫 Atlas 或“阿特拉斯”：
+## 一个了解你今天要做什么的私人助手
 
-```sh
-python scripts/personalos.py name Atlas
-```
+“周五前交报告。”说完之后，事情应该有个落点：
 
-重启 Mac 服务后开始新对话即可生效。称呼保存在自己的私有 `assistant-profile.json`，不会改变工具权限。如果也要改手机桌面的 App 名称，在 Xcode 修改 `CFBundleDisplayName` 后重新构建；快捷指令使用相同 Bundle ID。
+**记下截止日期 → 避开课程找空档 → 安排到 Apple 日历 → 完成后打勾 → 没做完的自动重排。**
 
-## 能做什么
+| 你说的话 | PersonalOS 可以做什么 |
+| --- | --- |
+| “周五前交报告。” | 记成只有截止日期的**待办**，不凭空造一个起止日程。 |
+| “给这些待办安排时间。” | 结合共享日历、截止日期、吃饭和缓冲时间，把执行时段写入 **Apple 日历**。 |
+| “今天这项没做完。” | 开启每日顺延后，根据新空档重排未完成的自动时段；截止日期保持原样。 |
+| “找到我的报告，把结尾改简洁一点。” | 在**授权目录**检索，生成修改稿，确认后写回，保留撤销记录。 |
+| “今天应该先做什么？” | 根据可用的课表、任务和截止信息，给出简短建议。 |
+| “我这里今天会下雨吗？” | 使用手机授权的位置查询实时天气，说明新鲜度或失败原因。 |
 
-- **语音和文字记任务。** 区分无时间待办、截止日期和明确起止日程；支持项目和子任务。
-- **按真实空档排程。** 使用手机授权共享的日历，避开课程、吃饭和缓冲时间；可开启每日自动顺延。执行时间改变不代表提交截止延后。
-- **写入 Apple 日历。** 计划、截止、已完成分开显示；任务需要明确勾选完成。只有手机回传当前版本写入成功，才报告日历已同步。
-- **让 Mac 处理资料。** 授权目录检索、文件预览、修改副本、确认写回和撤销；可选第二台 Mac 只读连接。
-- **连续对话。** 保存会话和分步执行记录，按需加载工具，保留近期上下文，识别重复无进展的调用。
-- **可选扩展。** Canvas 待办和订阅、手机定位天气、健康数据、训练草案、远程推送。目前节假日接口仅支持香港公众假期。
+## 先看它怎么用
 
-## 先跑通最小闭环
+### 完成一项，今天就往前走一点。
 
-准备 Apple Silicon Mac、Python 3.11+ 和 [Ollama](https://ollama.com/download)。进入本项目目录：
+![今天页动态演示：五项日历事项，从 0/5 到 1/5、20%，再到 2/5、40%](docs/media/progress.gif)
+
+来自**正式版 SwiftUI 界面**，使用独立模拟器与虚构数据。录制程序触发真实 EventKit 完成操作，展示 **0/5 → 1/5 → 2/5**；这段只验证进度界面，不包含语音和 iCloud 链路。[演示说明与原图](docs/DEMO.md)。
+
+| 今天 | 待办与项目 | 语音与文字 |
+| --- | --- | --- |
+| [![今天：日历事项和玻璃圆环](docs/media/today.png)](docs/media/today.png) | [![待办：项目、子任务、Canvas 截止和无日期事项](docs/media/todos.png)](docs/media/todos.png) | [![助手：语音入口和近期任务](docs/media/assistant.png)](docs/media/assistant.png) |
+| 一眼看到全部日历事项与完成进度。 | 有截止的、没定时间的、大项目都能记。 | 说一句或写一句，开始处理。 |
+
+### 接起来能做什么
+
+- **iPhone 语音私人管家：**可选 Action Button / Siri 快捷指令入口，保存会话、简短播报、连续追问。录音和系统跳转仍受 iOS 权限限制。
+- **Apple 日历智能排程：**计划、截止、已完成分类显示，可开启自动重排。只有收到手机对当前版本的写入回执，才报告已同步。
+- **Mac 本地 AI Agent：**检索和预览文档、准备修改稿、确认写回、撤销。可选第二台 Mac 保持只读访问。
+- **可选连接：**Canvas LMS 待办／日历订阅、定位天气、HealthKit、训练草案和 APNs 推送，按需单独配置与授权。
+
+## 先在 Mac 跑起来
+
+**第一步只查询设备状态，不需要 Apple 签名，也不需要先下载模型。**
+
+| 准备什么 | 用来做什么 |
+| --- | --- |
+| Apple Silicon Mac、Python 3.11+ | 常驻私人服务。32GB Mac 是参考设备，其他内存配置需自行验证。 |
+| [Ollama](https://ollama.com/download) 和支持工具调用的本地模型 | 自然语言理解。初始化不会自动下载模型或开启云端回退。 |
+| 带 iOS 26+ SDK 的完整 Xcode、iPhone | 自行签名和构建原生客户端。 |
+| 两台设备上的 [Tailscale](https://tailscale.com/download) | 手机和 Mac 的私人 HTTPS 连接。 |
+
+### 1. 启动 Mac 服务
 
 ```sh
 git clone https://github.com/Chauncey665/PersonalOS.git
@@ -43,43 +77,70 @@ python scripts/personalos.py doctor
 python scripts/personalos.py serve
 ```
 
-另开一个终端，激活同一虚拟环境：
+另开终端，进入同一个项目目录：
 
 ```sh
-python scripts/personalos.py pair
+.venv/bin/python scripts/personalos.py pair
 ```
 
-在**这台 Mac** 打开 `http://127.0.0.1:8765`，输入本机显示的五分钟配对码，提交“设备状态”。这会读取真实设备信息，不需要模型。
+在**这台 Mac** 打开 **http://127.0.0.1:8765**，输入本机显示的短期配对码，提交“设备状态”。应能看到真实系统和磁盘信息。端口占用的处理方法见[安装教程](docs/INSTALL.zh-CN.md)。
 
-自然语言规划需要显式下载已配置的模型：
+### 2. 开启本地理解
+
+保持 Ollama 运行，显式下载已配置的模型：
 
 ```sh
 ollama pull qwen3.5:9b
 ```
 
-Ollama 需要在 `127.0.0.1:11434` 运行。初始化不会下载模型，`doctor` 会核对完整标签是否安装。[模型页面](https://ollama.com/library/qwen3.5)列有可用规格；参考设备是 32GB Apple Silicon Mac，其他内存配置需自行验证速度与内存。
+`doctor` 会在 `127.0.0.1:11434` 核对完整标签。可以配置其他支持工具调用的模型；不要覆盖共享模型别名。详细步骤见[模型与环境设置](docs/INSTALL.zh-CN.md)。
 
-然后按[完整安装教程](docs/INSTALL.zh-CN.md)配置你自己的 Tailscale、Apple 签名和 iPhone App。
+### 3. 接上 iPhone
 
-## 安装条件与边界
+[**按图走完安装路径 →**](docs/SETUP.md)
 
-| 部分 | 说明 |
-| --- | --- |
-| Mac 服务 | Python 标准库、SQLite；只监听本机 IPv4 loopback |
-| 本地推理 | 可配置 Ollama 模型标签、上下文和驻留时间；没有自动云端回退 |
-| iPhone | 当前源码需完整 Xcode 和 iOS 26+ SDK 编译；建议 iOS 26+ 使用当前语音流程，不能把较低部署目标当作所有旧设备已经验收 |
-| 日历 | 用户亲自在手机授予 EventKit 权限；iOS 后台执行有限制 |
-| 语音 | 可选安装 MLX 及独立下载识别模型；基础安装不自动下载 |
-| 播报 | 默认系统声音，可选本地 Qwen TTS / Uncle_Fu |
-| 健康、推送 | 分别开启对应签名能力和用户权限；基础签名不包含这两项 |
-| Canvas | 先在 Mac 配置学校 HTTPS 地址；仅访问指定来源。订阅模式无法判断是否提交作业 |
-| 第二台 Mac | 高级可选配置，使用强制命令 SSH 专用钥匙和主机身份验证，远端保持只读 |
+**取得自己的 Tailscale 私人网址 → 选择 Xcode 团队与 Bundle ID → 构建到手机 → 配对 → 授权日历 → 验证一条真实日程。**
 
-默认工作时段为 11:00 至次日 01:00，午晚餐各45分钟，待办默认45分钟、每日预算4小时。排程设置接口允许调整预算和时间；当前手机设置页未提供完整作息编辑器。不要把默认值误当成根据每个人生活习惯自动学习的结果。
+[完整中文教程](docs/INSTALL.zh-CN.md)包含命令、签名要求和验收方法。[语音入口](docs/VOICE.md)需要单独配置，基础安装不下载识别或播报模型。健康、推送和 Canvas 也都是可选项。
 
-这是为**一个人与其可信设备**准备的私人服务，不面向公网或多租户部署。
+## 助手叫什么，由你决定
 
-## 开发与验证
+**PersonalOS 是项目名，助手名字可以由每位用户自己修改。** 完成基础安装后，例如：
+
+```sh
+python scripts/personalos.py name Atlas
+```
+
+也支持中文名字。重启 Mac 服务后开始新对话即可生效。称呼保存在自己的私有 `assistant-profile.json`，不会改变权限。手机桌面名称可在 Xcode 修改 `CFBundleDisplayName` 后重新构建，快捷指令使用一致的 Bundle ID。
+
+## 本地优先，完成要有回执
+
+Mac 运行模型，用 SQLite 保存任务；iPhone 负责 EventKit 写入。文件工具在授权范围内工作，改动前需要当前版本预览和确认。可选联网工具访问各自配置的数据来源，不会自动把推理切到云端模型。
+
+```mermaid
+flowchart LR
+  A[iPhone 语音或文字] -->|私人 HTTPS 与配对| B[Mac 本地模型与工具]
+  B --> C[任务与执行回执]
+  C --> D[iPhone Apple 日历]
+  D -->|核对当前版本| E[简短结果与可选推送]
+```
+
+面向**一个人与其可信设备**。保持私人连接，不开启 Funnel 或公网端口转发，不绕过 iOS 沙盒。[安全说明](SECURITY.md)。
+
+<details>
+<summary><strong>当前限制与验证范围</strong></summary>
+
+- 语音、自然语言和日期识别仍可能出错，请检查日历。新鲜课表或待写日程有时需要打开 App；手机离线不能当成已同步。
+- 导航、分享、录音和锁屏行为受系统界面限制，不会自动发送微信个人号消息。
+- 初始作息为 11:00 至次日 01:00，午晚餐各45分钟、课程缓冲15分钟，每日待办预算4小时。排程设置接口允许调整，手机端尚无完整作息编辑器。
+- Canvas 先配置学校 HTTPS 来源；订阅无法判断作业是否已提交。目前公众假期查询覆盖香港。训练建议是基于共享数据的草案。
+- CI 检查后端、独立目录安装和无签名模拟器构建；新用户的 Apple 签名、手机权限、第三方账号仍需本人验收。[验证范围](docs/VERIFICATION.md)。
+
+</details>
+
+## 一起把它做得更好用
+
+欢迎先在自己的设备跑通一个任务，再[反馈可复现的问题](https://github.com/Chauncey665/PersonalOS/issues/new)。参与方式见 [CONTRIBUTING.md](CONTRIBUTING.md)。请使用虚构数据，不上传健康导出、日历订阅、凭据或数据库。
 
 ```sh
 python scripts/check_release.py
@@ -88,20 +149,8 @@ python -m unittest discover -s air
 python scripts/smoke_install.py
 ```
 
-测试使用临时状态与合成资料；需要真实 Ollama 的旧集成用例默认跳过，可显式设 `PERSONALOS_LIVE_TESTS=1`。干净安装检查会启动独立本机端口、配对两台合成设备、验证隔离、执行真实设备查询，并清除临时状态。
+真实 Ollama 的旧集成用例默认跳过，可显式设 `PERSONALOS_LIVE_TESTS=1`。[架构](docs/ARCHITECTURE.md) · [集成](docs/INTEGRATIONS.md) · [语音](docs/VOICE.md) · [验证](docs/VERIFICATION.md)。
 
-```sh
-xcodebuild -project ios/PersonalOS.xcodeproj -scheme PersonalOS \
-  -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
-  -derivedDataPath build CODE_SIGNING_ALLOWED=NO build
-```
+**如果你也想要一个自己的 AI 私人管家，欢迎点个 Star，关注 PersonalOS 的进展。**
 
-已提供 GitHub Actions 配置；实际远程 CI 要在仓库发布后运行，不能把本地通过当作远程 CI 已通过。[验证范围](docs/VERIFICATION.md)区分代码、构建、设备和账号条件。
-
-## 目录与贡献
-
-`server/` 是服务端，`ios/` 是原生客户端，`scripts/` 提供安装和检查，`shortcuts/` 保存无签名工作流，`config/examples/` 保存禁用状态的配置示例，`air/` 是可选受限导出器。服务运行数据默认保存在 `~/Library/Application Support/PersonalOS-OpenSource`，不会进入仓库。
-
-欢迎按 [CONTRIBUTING.md](CONTRIBUTING.md) 提交可复现的问题与改进。不要上传自己的健康导出、日历订阅链接、数据库、配对码或密钥。
-
-本项目采用 [MIT](LICENSE)；模型和可选依赖分别遵循其许可。设计参考与第三方说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+源码采用 [MIT](LICENSE)，模型和可选依赖分别遵循其许可且未打包。[第三方说明](THIRD_PARTY_NOTICES.md)。
